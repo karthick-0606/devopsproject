@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  background: #2e2e86;
+  position: relative;
+  overflow-x: hidden;
+  padding: 30px 20px;
+}
+
+/* Animated mesh gradient background */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(0deg, rgba(0,255,150,0.05) 0%, transparent 40%),
+    linear-gradient(90deg, rgba(0,200,255,0.05) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(255,0,150,0.03) 0%, transparent 40%),
+    radial-gradient(500px 500px at 50% 50%, rgba(0,255,200,0.08), transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
+}
+
+.App-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.App-logo {
+  height: 70px;
+  width: auto;
+  pointer-events: none;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 150, 0.4));
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 255, 150, 0.4)); }
+  50% { filter: drop-shadow(0 0 30px rgba(0, 255, 150, 0.6)); }
+}
+
+.App-link {
+  color: #00ff96;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.App-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #00ff96, #00c8ff);
+  transition: width 0.4s ease;
+}
+
+.App-link:hover {
+  color: #00c8ff;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
+}
+
+.App-link:hover::after {
+  width: 100%;
+}
+
+/* Money-themed neon accent */
+.money-accent {
+  color: #00ff96;
+  text-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
+}
+
+.money-accent-light {
+  color: #00c8ff;
+  text-shadow: 0 0 8px rgba(0, 200, 255, 0.4);
+}

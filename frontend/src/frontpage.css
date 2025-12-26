@@ -1,0 +1,264 @@
+/* Neon Cyberpunk Theme */
+:root {
+  --primary: #00ff96;
+  --secondary: #00c8ff;
+  --accent: #ff006e;
+  --danger: #ff1744;
+  --success: #00ff96;
+  --bg-dark: rgba(15, 15, 35, 0.8);
+  --border-glow: rgba(0, 255, 150, 0.3);
+  --text-primary: #e0e0e0;
+  --text-muted: #a0a0a0;
+}
+
+.front-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 35px;
+  background: var(--bg-dark);
+  border: 1.5px solid var(--border-glow);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 0 30px rgba(0, 255, 150, 0.1),
+    inset 0 0 30px rgba(0, 255, 150, 0.05);
+}
+
+.front-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid rgba(0, 200, 255, 0.2);
+}
+
+.front-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  text-shadow: 0 0 20px rgba(0, 255, 150, 0.5);
+}
+
+.front-sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* Form Styling */
+form.expense-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 35px;
+  padding: 20px 24px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-glow);
+  border-radius: 12px;
+}
+
+form.expense-form input,
+form.expense-form select {
+  padding: 12px 16px;
+  border: 2px solid transparent;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) padding-box,
+              linear-gradient(135deg, #00ff96, #00c8ff) border-box;
+  color: var(--text-primary);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.4s ease;
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+
+form.expense-form input::placeholder {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+form.expense-form input:focus,
+form.expense-form select:focus {
+  background: linear-gradient(rgba(0, 200, 255, 0.15), rgba(0, 255, 150, 0.1)) padding-box,
+              linear-gradient(135deg, #00ff96, #00c8ff) border-box;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 150, 0.4),
+    inset 0 0 20px rgba(0, 255, 150, 0.05);
+  transform: translateY(-2px);
+}
+
+form.expense-form button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form.expense-form button[type="submit"] {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #000;
+  box-shadow: 0 0 20px rgba(0, 255, 150, 0.3);
+}
+
+form.expense-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 255, 150, 0.6);
+}
+
+form.expense-form button[type="reset"] {
+  background: transparent;
+  color: var(--secondary);
+  border: 1.5px solid var(--secondary);
+}
+
+form.expense-form button[type="reset"]:hover {
+  background: rgba(0, 200, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.3);
+}
+
+/* Table Styles */
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.expense-table thead {
+  background: linear-gradient(90deg, 
+    rgba(0, 255, 150, 0.1), 
+    rgba(0, 200, 255, 0.1));
+}
+
+.expense-table th {
+  padding: 14px 16px;
+  text-align: left;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border-bottom: 2px solid var(--border-glow);
+}
+
+.expense-table td {
+  padding: 13px 16px;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+}
+
+.expense-table tbody tr {
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.expense-table tbody tr:hover {
+  background: rgba(0, 255, 150, 0.05);
+  border-left: 3px solid var(--primary);
+  padding-left: 13px;
+}
+
+.expense-table tbody tr:hover td {
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(0, 255, 150, 0.3);
+}
+
+/* Action Buttons */
+.expense-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.expense-actions button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.expense-actions .edit {
+  background: rgba(0, 200, 255, 0.2);
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+
+.expense-actions .edit:hover {
+  background: rgba(0, 200, 255, 0.4);
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.expense-actions .delete {
+  background: rgba(255, 23, 68, 0.2);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.expense-actions .delete:hover {
+  background: rgba(255, 23, 68, 0.4);
+  box-shadow: 0 0 12px rgba(255, 23, 68, 0.5);
+  transform: scale(1.05);
+}
+
+/* Stats Section */
+.expense-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 35px;
+  padding-top: 30px;
+  border-top: 2px solid rgba(0, 200, 255, 0.2);
+}
+
+.stat-card {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1.5px solid var(--border-glow);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--secondary);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--primary);
+  text-shadow: 0 0 15px rgba(0, 255, 150, 0.4);
+}
+
+@media (max-width:900px){
+  form.expense-form{ grid-template-columns: 1fr; }
+  .front-container{ margin: 18px; padding: 16px }
+}
+
