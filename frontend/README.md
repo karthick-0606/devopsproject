@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Expense Tracker - Frontend
+
+### Technologies Used
+- React JS
+- Axios
+- Bootstrap
+
+### Features
+- Add expenses
+- View expense list
+- Edit and delete expenses
